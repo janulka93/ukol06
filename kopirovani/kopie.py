@@ -4,8 +4,8 @@ Názvy zadávej ručně a nezapomeň na příponu!!!
 
 while True:
     nazevPred = input('Zadej název otevíraného souboru: ')
-
     if '.' in nazevPred:
+#osetreni pripadu, ze soubor neexistuje 
         try:
             soubor = open(nazevPred, encoding='utf-8')
         except FileNotFoundError:
