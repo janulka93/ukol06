@@ -21,4 +21,4 @@ def pocitani_znaku(abeceda, text):
     return pocet
 
 print('V zadaném textu je', pocitani_znaku(hiragana, caj), 'znaků hiragany.')
-print('V zadaném textu je',pocitani_znaku(katakana, caj), 'znaků katakany.')
+print('V zadaném textu je', pocitani_znaku(katakana, caj), 'znaků katakany.')
