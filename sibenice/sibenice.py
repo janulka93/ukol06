@@ -1,103 +1,5 @@
 from random import randrange
 
-prvni = '''
-
-
-
-
-
-
-~~~~~~~'''
-
-druhe = '''
-+
-|
-|
-|
-|
-|
-~~~~~~~'''
-
-treti = '''
-+---.
-|
-|
-|
-|
-|
-~~~~~~~
-'''
-
-ctvrte = '''
-+---.
-|   |
-|
-|
-|
-|
-~~~~~~~
-'''
-
-pate = '''
-+---.
-|   |
-|   O
-|
-|
-|
-~~~~~~~
-'''
-
-seste = '''
-+---.
-|   |
-|   O
-|   |
-|
-|
-~~~~~~~
-'''
-
-sedme = '''
-+---.
-|   |
-|   O
-| --|
-|
-|
-~~~~~~~
-'''
-
-osme = '''
-+---.
-|   |
-|   O
-| --|--
-|
-|
-~~~~~~~
-'''
-
-devate = '''
-+---.
-|   |
-|   O
-| --|--
-|  /
-|
-~~~~~~~
-'''
-
-desate = '''
-+---.
-|   |
-|   O
-| --|--
-|  / \
-|
-~~~~~~~
-'''
-
 slovo1 = 'rymicka'
 slovo2 = 'hudba'
 slovo3 = 'slovnik'
@@ -121,11 +23,11 @@ def vyberSlova(pocetSlov):
         return vybrane
 
 def hadani(vybrane, hadanka):
-    pokus = 0
+    # pokus = 0
     print(vybrane)
     while True:
         znak = input('Zadej písmeno: ')
-        # pokus = 0
+        pokus = 0
         #print(len(znak))
         if len(znak) == 1:
             if znak in vybrane:
@@ -135,7 +37,9 @@ def hadani(vybrane, hadanka):
                 hadanka = dopln(hadanka, pozice, znak)
                 return hadanka
             else:
-                pokus +=  1
+                pokus += 1
+                pokSoubor = str(pokus) + '.txt'
+                print(pokSoubor)
                 print(pokus, 'počpok')
                 vypis(pokus)
                 # return pokus
@@ -143,33 +47,19 @@ def hadani(vybrane, hadanka):
             print('Zadal jsi číslo nebo řetězec. Zadej nové písmeno.')
             break
 
-def vypis(pokus):
-    if pokus == 0:
-        print()
-    elif pokus == 1:
-        print(prvni)
-    elif pokus == 2:
-        print(druhe)
-    elif pokus == 3:
-        print(treti)
-    elif pokus == 4:
-        print(ctvrte)
-    elif pokus == 5:
-        print(pate)
-    elif pokus == 6:
-        print(seste)
-    elif pokus == 7:
-        print(sedme)
-    elif pokus == 8:
-        print(osme)
-    elif pokus == 9:
-        print(devate)
-    elif pokus == 10:
-        print(desate)
-        print('Konec hry! Došly ti pokusy. Prohrála jsi.')
-    else:
-        print(hadani(vybrane, hadanka))
-
+def vypis(pokusSoubor):
+    for pokus in range(0,10)
+        if pokusSoubor >= 1 and pokusSoubor < 10:
+            soubor = open(pokusSoubor, encoding = 'utf-8')
+            obrazek = soubor.read()
+            soubor.close()
+            print(obrazek)
+        elif pokusSoubor == 10:
+            soubor = open('10.txt', encoding = 'utf-8')
+            obrazek = soubor.read()
+            soubor.close()
+            print(obrazek)
+            print('Konec hry! Prohrála jsi. Hádané slovo: ', vybrane)
 
 def dopln(hadanka, pozice, znak):
     """
