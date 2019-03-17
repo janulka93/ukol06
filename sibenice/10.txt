@@ -5,5 +5,3 @@
 |  / \
 |
 ~~~~~~~
-
-Konec hry! Prohrála jsi.
